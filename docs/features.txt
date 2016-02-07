@@ -1,0 +1,21 @@
+*** Neti Feature List ***
+
+* Database
+* Web API
+* Mobile App
+* Desktop App
+* Website
+* Apple Watch App
+
+*** Tasks
+
+
+- analyse schema
+- create Database
+- create web API
+- setup CI
+- setup GitHub Micro account
+
+** Completed Tasks
+x create folder
+x create Git repository

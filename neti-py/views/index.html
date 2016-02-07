@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Neti!</title>
+        <style type="text/css">
+            body { font-family: sans-serif; color: #4f494f; }
+            form input { border-radius: 7.5px; }
+            h5 { display: inline; }
+            .label { text-align: right; }
+            .eventbook { float: left; padding-top: 10px; }
+            .userevent { width: 100%; float: left; padding: 3px; }
+            .wrapper { padding-left: 25px; padding-top: 20px; }
+        </style>
+    </head>
+ 
+    <body>
+        <div class="wrapper">
+            <h1>Welcome To Neti</h1>
+            <div class="neti_input">
+                <form method="post" class="form" action="/newuserevent">
+                    User: <input type="text" name="user"/>
+                    Date : <input type="text" name="eventdate"/>
+                    Type : <input type="text" name="eventtype"/>
+                    Value : <input type="text" name="eventvalue"/>
+                    <input type="submit" value="Add Event"/>
+                </form>
+            </div>
+            <div class="eventbook">
+                <h3>Events:</h3>
+                %for userevent in userevents:
+                <div class="userevent">
+                <h5>User:</h5> {{userevent['user']}},
+                <h5>Date:</h5> {{userevent['eventdate']}},
+                <h5>Type:</h5> {{userevent['eventtype']}},
+                <h5>Value:</h5> {{userevent['value']}}
+                </div>
+                %end
+            </div>
+        </div>
+    </body>
+</html>
