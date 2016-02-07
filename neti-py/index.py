@@ -14,9 +14,9 @@ def insert_userevent():
     user = bottle.request.forms.get("user")
     eventdate = bottle.request.forms.get("eventdate")
     eventtype = bottle.request.forms.get("eventtype")
-    value = bottle.request.forms.get("value")
+    eventvalue = bottle.request.forms.get("eventvalue")
 
-    eventslist.insert_event(user, eventdate, eventtype, value)
+    eventslist.insert_userevent(user, eventdate, eventtype, eventvalue)
     bottle.redirect('/')
  
 #This is to set up the connection.
