@@ -1,0 +1,8 @@
+*** User Stories ***
+
+A client can upload a text file of imported FreeStyle data to the database from a web page.
+
+A client can calculate bolus dose from an iPhone app.
+
+Basal advice can be given.
+
