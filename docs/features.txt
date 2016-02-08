@@ -1,21 +1,21 @@
-*** Neti Feature List ***
-
-* Database
-* Web API
-* Mobile App
-* Desktop App
-* Website
-* Apple Watch App
-
 *** Tasks
 
-
-- analyse schema
-- create Database
+- setup Alex's machine
 - create web API
 - setup CI
 - setup GitHub Micro account
+- Web API
+- Mobile App
+- Desktop App
+- Website
+- Apple Watch App
 
 ** Completed Tasks
+
 x create folder
 x create Git repository
+x database
+x python POC site
+x add project to GitHub
+x analyse schema
+x create Database
