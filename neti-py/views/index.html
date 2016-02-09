@@ -16,6 +16,7 @@
     <body>
         <div class="wrapper">
             <h1>Welcome To Neti</h1>
+            
             <div class="neti_input">
                 <form method="post" class="form" action="/newuserevent">
                     User: <input type="text" name="user"/>
@@ -24,7 +25,7 @@
                     Value : <input type="text" name="eventvalue"/>
                     <input type="submit" value="Add Event"/>
                 </form>
-            </div>
+            </div>  
             <div class="eventbook">
                 <h3>Events:</h3>
                 %for userevent in userevents:
