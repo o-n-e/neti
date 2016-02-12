@@ -56,7 +56,6 @@ $scope.submit = function() {
     alert(dt);
 }
 
-
 }]);
 
 var dateTimePicker = function() {
@@ -66,11 +65,11 @@ var dateTimePicker = function() {
         link: function (scope, element, attrs, ngModelCtrl) {
             var parent = $(element).parent();
             var dtp = parent.datetimepicker({
-                format: "lll",
+                format: "llll",
                 showTodayButton: true
             });
             dtp.on("dp.change", function (e) {
-                ngModelCtrl.$setViewValue(moment(e.date).format("lll"));
+                ngModelCtrl.$setViewValue(moment(e.date).format("llll"));
                 scope.$apply();
             });
         }

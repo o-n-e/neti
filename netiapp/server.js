@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.get('/eventlist', function (req, res) {
   console.log('I received a GET request');
 
-	db.userevents.find(function (err, docs) {
+	db.userevents.find().sort({natural: -1}, function (err, docs) {
 	    console.log(docs);
 	    res.json(docs);
 	});

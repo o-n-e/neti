@@ -2,9 +2,11 @@
 <html ng-app="myApp"
 <head>
 	<title>Neti</title>
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 	<div class="container" ng-controller="AppCtrl">
@@ -14,45 +16,64 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Date</th>
 					<th>Type</th>
 					<th>Value</th>
+					<th>Date</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr>			
 					<td>
-						<div class="form-group" style="width: 240px">
-							<div class='input-group date' id='datetimepicker1'>
-								<!--<input type='text' class="form-control" ng-model="selectedDt" data-date-time-picker/>-->
-								<input type='text' class="form-control" ng-model="event.eventdate" data-date-time-picker/>
-								<span class="input-group-addon">
-									<span class="glyphicon glyphicon-calendar"></span>
-								</span>
-							</div>
-						</div>
-					</td>
-					<td>
-						<select class="form-control" name="singleSelect" ng-model="event.eventtype">
+						<select class="form-control" 
+									name="singleSelect" 
+									ng-model="event.eventtype" 
+									tabindex="1" 
+									required>
 							<option value="glucose">glucose</option>
+							<option value="carbs">carbs</option>
 							<option value="bolus">bolus</option>
 							<option value="basal">basal</option>
 						</select>
 					</td>
-					<td><input class="form-control" ng-model="event.eventvalue"></td>
-					<td><button class="btn btn-primary" ng-click="addEvent()">Add Event</button></td>
-					<td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+					<td>
+						<input class="form-control" 
+									type="number" 
+									ng-model="event.eventvalue" 
+									min="0" 
+									max="50" 
+									required
+									tabindex="2"> 
+					</td>
+					<td>
+						<div class="form-group" style="width: 250px">
+							<div class='input-group date' id='datetimepicker1'>
+								<input type='text' 
+										class="form-control" 
+										ng-model="event.eventdate" 
+										data-date-time-picker
+										tabindex="3"
+										required/>
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar" </span>
+								</span>
+							</div>
+						</div>
+					</td>
+					<td><button class="btn btn-primary" ng-click="addEvent()" tabindex="4">Add Event</button></td>
+					<td><button class="btn btn-info" ng-click="update()" tabindex="5">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()" tabindex="6">Clear</button></td>
 				</tr>
-				<tr ng-repeat="event in eventlist">
-					<td>{{event.eventdate}}</td>
+				<tr ng-repeat="event in eventlist">				
 					<td>{{event.eventtype}}</td>
 					<td>{{event.eventvalue}}</td>
+					<td>{{event.eventdate}}</td>
 					<td><button class="btn btn-danger" ng-click="remove(event._id)">Remove</button></td>
           			<td><button class="btn btn-warning" ng-click="edit(event._id)">Edit</button></td>
 				</tr>
 			</tbody>
 		</table>
+
+		<!--<pre>{{event}}</pre>-->
 
 	</div>
 
